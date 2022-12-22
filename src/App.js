@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Layout from "./Layout/Layout";
+import MoviesList from "./components/moviesList/MoviesList";
 
 function App() {
+  const [movies, setMovies] = useState([]);
+  const getMovies = async () => {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}`
+    ).then((res) => res.json());
+    setMovies(response.results);
+  };
+
+  console.log(movies);
+
+  useEffect(() => {
+    getMovies();
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Layout movies={movies}>
+        <Routes>
+          <Route path="/" element={<MoviesList movies={movies} />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   );
 }
 

@@ -1,0 +1,49 @@
+.header {
+  height: 100vh;
+}
+
+.header-content {
+  position: relative;
+  height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.header-content .movie-header-infos {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+}
+
+.header-content .movie-header-infos h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.header-content .movie-header-infos p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  width: 50%;
+}
+
+.header-content .movie-header-infos span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+}
+
+.header-content img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

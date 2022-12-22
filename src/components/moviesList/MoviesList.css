@@ -1,0 +1,47 @@
+.movies-list {
+  width: 80%;
+  margin: 100px auto auto auto;
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 100px;
+}
+
+.movies-list-title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.movie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.movie:hover > img {
+  transform: scale(1.01);
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.movie-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.movie-img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+}
