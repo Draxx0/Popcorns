@@ -2,9 +2,12 @@ import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Layout from "./Layout/Layout";
+import Upcoming from "./views/Upcoming/Upcoming";
 import Home from "./views/Home/Home";
 import MovieDetails from "./views/MovieDetails/MovieDetails";
-import Populate from "./views/Populate/Populate";
+import MoviesPage from "./views/MoviesPage/MoviesPage";
+import TopRated from "./views/TopRated/TopRated";
+import Popular from "./views/Popular/Popular";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -22,9 +25,11 @@ function App() {
     <BrowserRouter>
       <Layout movies={movies}>
         <Routes>
-          <Route path="/" element={<Home movies={movies} />} />
+          <Route path="/" element={<MoviesPage movies={movies} />} />
           <Route path="/movie/:id" element={<MovieDetails movies={movies} />} />
-          <Route path="/popular" element={<Populate />} />
+          <Route path="/popular" element={<Popular />} />
+          <Route path="/top-rated" element={<TopRated />} />
+          <Route path="/upcoming" element={<Upcoming />} />
         </Routes>
       </Layout>
     </BrowserRouter>

@@ -1,11 +1,11 @@
 import Header from "../../components/Header/Header";
-import MoviesList from "../../components/moviesList/MoviesList";
+import MoviesPage from "../MoviesPage/MoviesPage";
 
 const Home = ({ movies }) => {
   return (
     <div className="home">
       <Header />
-      <MoviesList movies={movies} />
+      <MoviesPage movies={movies} />
     </div>
   );
 };

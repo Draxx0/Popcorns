@@ -3,6 +3,25 @@
   margin: 100px auto auto auto;
 }
 
+.movies-list h2 {
+  margin-bottom: 50px;
+  font-size: 28px;
+  font-weight: 700;
+  position: relative;
+  width: fit-content;
+}
+
+.movies-list h2::before{
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 75%;
+  height: 5px;
+  background-color: rgb(93, 231, 255);
+  border-radius: 50px;
+}
+
 .movies-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -20,6 +39,11 @@
   align-items: center;
   gap: 10px;
   cursor: pointer;
+}
+
+.movie-img {
+  height: 400px;
+  object-fit: cover;
 }
 
 .movie:hover > img {

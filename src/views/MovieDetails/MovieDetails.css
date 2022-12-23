@@ -33,7 +33,9 @@
 .productions {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  align-items: center;
   gap: 100px;
+  margin-top: 50px;
 }
 
 .productions img {
