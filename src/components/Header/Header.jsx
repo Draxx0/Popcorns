@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Navbar from "../Navbar/Navbar";
 import "./Header.css";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,19 +13,20 @@ const Header = () => {
     setMovie(response.results.slice(0, 1));
   };
 
-  console.log(movie);
   useEffect(() => {
     getMovie();
   }, []);
 
   return (
     <>
-      <Navbar />
       <div className="header">
         <div className="header-content">
-          <div className="overlay"></div>
+          <div className="left-overlay"></div>
+          <div className="right-overlay"></div>
           <img
-            src={"https://image.tmdb.org/t/p/original/" + movie[0]?.backdrop_path}
+            src={
+              "https://image.tmdb.org/t/p/original/" + movie[0]?.backdrop_path
+            }
             alt={movie[0]?.title}
           />
           <div className="movie-header-infos">
